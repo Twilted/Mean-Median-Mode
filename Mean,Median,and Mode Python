@@ -1,0 +1,30 @@
+from statistics import mean, median, multimode
+
+def calculate_statistics(data):
+    # Finds Mean
+    mean_value = mean(data)
+    print(f"Mean: {mean_value:.2f}")
+
+    # Finds Median
+    median_value = median(data)
+    print(f"Median: {median_value:.2f}")
+
+    # Finds Mode
+    mode = multimode(data)
+    if len(mode) == len(data):
+        print("Mode: No mode")
+    else:
+        print(f"Mode(s): {', '.join(map(str, modes))}")
+
+if __name__ == "__main__":
+    print("Enter a list of numbers separated by spaces:")
+    try:
+        # Allows user to input data
+        user_input = input()
+        # Convert the input string into a list of numbers
+        numbers = list(map(float, user_input.split()))
+
+        # Calls back the function
+        calculate_statistics(numbers)
+
+#Kept getting errored out at this point and wasn't sure why
